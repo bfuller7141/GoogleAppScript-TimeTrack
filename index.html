@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Apps Script Generator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-wrapper">
+                <form>
+                    <label for="calendarId" class="form-label">Email Address</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="calendarId" name="calendarId" class="input" placeholder="Enter your Google email address">
+                    </div>
+                    <label for="spreadsheetId" class="form-label">Spreadsheet Name:</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="spreadsheetId" name="spreadsheetId" class="input" placeholder="Enter the name of your spreadsheet">
+                    </div>
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <div class="input-wrapper">
+                        <input type="date" id="startDate" name="startDate" class="input">
+                    </div>
+                    <label class="form-label">Add Your Categories:</label>
+                    <div id="categoryContainer"></div>
+                    <button type="button" class="add-button" onclick="addCategoryInput()">Add Another Category</button>
+                </form>
+            </div>
+            <button type="button" class="button-main" onclick="generateScript()">Generate Script</button>
+        </div>
+        <div class="script-container">
+            <div class="code-wrapper">
+                <div class="code-head">
+                    <div class="window-icon"></div>
+                    <div class="window-icon"></div>
+                    <div class="window-icon"></div>
+                </div>
+                <div class="code-block">
+                    <pre><code id="output" class="language-javascript"></code></pre>
+                </div>
+                <button class="copy-button disabled" disabled onclick="copyToClipboard()">Copy Code</button>
+                <button class="reset-button" onclick="resetForm()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
